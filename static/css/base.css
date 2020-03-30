@@ -1,0 +1,44 @@
+header {
+    margin-bottom: 20px;
+}
+
+header nav form {
+    display: flex;
+    justify-content: space-around;
+}
+
+header nav form #new_task {
+    width: 60%;
+}
+
+table tbody td a {
+    color: #222222;
+}
+
+table tbody td a:hover {
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 767px) {
+    header nav .logo {
+        margin-bottom: 10px;
+    }
+
+    header nav form {
+        justify-content: space-between;
+    }
+
+    header nav form #new_task {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 545px) {
+    header nav form #new_task {
+        width: 100%;
+    }
+
+    header nav form button {
+        width: 100%;
+    }
+}

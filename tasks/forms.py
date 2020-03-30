@@ -14,7 +14,7 @@ class TaskForm(forms.ModelForm):
                 attrs={
                     'class': 'form-control mr-sm-2',
                     'placeholder': 'Enter a new task',
-                    'style': 'width: 60%;',
+                    'id': 'new_task',
                 }
             )
         }
