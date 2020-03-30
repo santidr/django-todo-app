@@ -4,14 +4,16 @@
 {% endblock header %}
 
 {% block content %}
-<h2>Edit Task</h2>
+<div class="edit-delete-content">
+    <h2>Edit Task</h2>
 
-<form method="post">
-    {% csrf_token %}
-    {{ form }}
-    <p>
-        <a class="btn btn-light" href="{% url 'home' %}">Cancel</a>
-        <input class="btn btn-primary" type="submit" value="Edit task">
-    </p>
-</form>
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <p>
+            <a class="btn btn-light" href="{% url 'home' %}">Cancel</a>
+            <input class="btn btn-primary" type="submit" value="Edit task">
+        </p>
+    </form>
+</div>
 {% endblock %}

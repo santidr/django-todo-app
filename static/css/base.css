@@ -11,6 +11,24 @@ header nav form #new_task {
     width: 60%;
 }
 
+header nav form .btn {
+    margin-right: 50px;
+}
+
+main .edit-delete-content {
+    width: 70%; 
+    margin: 0 auto;
+}
+
+main .edit-delete-content h2 {
+    margin-top: 20px;
+}
+
+main .edit-delete-content input[type=text],
+main .edit-delete-content h5 {
+    margin: 30px 0;
+}
+
 table tbody td a {
     color: #222222;
     display: block;
@@ -32,6 +50,11 @@ table tbody td a:hover {
 
     header nav form #new_task {
         width: 70%;
+    }
+
+    main .edit-delete-content {
+        width: 90%; 
+        margin: 0 auto;
     }
 }
 
