@@ -1,10 +1,17 @@
+{% extends '../base.html' %}
+
+{% block header %}
+{% endblock header %}
+
+{% block content %}
 <h2>Edit Task</h2>
 
 <form method="post">
     {% csrf_token %}
     {{ form }}
     <p>
-        <a href="{% url 'home' %}">Cancel</a>
-        <input type="submit" value="Edit task">
+        <a class="btn btn-light" href="{% url 'home' %}">Cancel</a>
+        <input class="btn btn-primary" type="submit" value="Edit task">
     </p>
 </form>
+{% endblock %}

@@ -1,13 +1,19 @@
-<form method="post">
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Create task">
-</form>
+{% extends '../base.html' %}
 
-{% for task in tasks_list %}
-    <li>
-        {{ task.title }} &middot; 
-        <a href="{% url 'task_edit' task.pk %}">Edit</a> |
-        <a href="{% url 'task_delete' task.pk %}">Delete</a>
-    </li>
-{% endfor %}
+{% block content %}
+<table class="table">
+    <tbody>
+        {% for task in tasks_list %}
+        <tr>
+          <td><a href="#" style="display: block;">{{ task.title }}</a></td>
+          <td>
+              <a class="btn btn-primary" href="{% url 'task_edit' task.pk %}">Edit</a>
+          </td>
+          <td>
+              <a class="btn btn-danger" href="{% url 'task_delete' task.pk %}">Delete</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+</table>
+{% endblock %}
