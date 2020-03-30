@@ -4,15 +4,27 @@
 <table class="table">
     <tbody>
         {% for task in tasks_list %}
-        <tr>
-          <td><a href="#" style="display: block;">{{ task.title }}</a></td>
-          <td>
-              <a class="btn btn-primary" href="{% url 'task_edit' task.pk %}">Edit</a>
-          </td>
-          <td>
-              <a class="btn btn-danger" href="{% url 'task_delete' task.pk %}">Delete</a>
-          </td>
-        </tr>
+          {% if task.completed %}
+          <tr class="table-active">
+            <td><a href="{% url 'task_uncross' task.pk %}"><strike>{{ task.title }}</strike></a></td>
+            <td>
+                <a class="btn btn-primary" href="{% url 'task_edit' task.pk %}">Edit</a>
+            </td>
+            <td>
+                <a class="btn btn-danger" href="{% url 'task_delete' task.pk %}">Delete</a>
+            </td>
+          </tr>
+          {% else %}
+            <tr>
+              <td><a href="{% url 'task_cross' task.pk %}">{{ task.title }}</a></td>
+              <td>
+                  <a class="btn btn-primary" href="{% url 'task_edit' task.pk %}">Edit</a>
+              </td>
+              <td>
+                  <a class="btn btn-danger" href="{% url 'task_delete' task.pk %}">Delete</a>
+              </td>
+            </tr>
+          {% endif %}
         {% endfor %}
       </tbody>
 </table>

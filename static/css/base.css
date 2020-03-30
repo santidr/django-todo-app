@@ -13,6 +13,7 @@ header nav form #new_task {
 
 table tbody td a {
     color: #222222;
+    display: block;
 }
 
 table tbody td a:hover {
@@ -20,7 +21,8 @@ table tbody td a:hover {
 }
 
 @media only screen and (max-width: 767px) {
-    header nav .logo {
+    header nav .logo,
+    header nav form {
         margin-bottom: 10px;
     }
 

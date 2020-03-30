@@ -42,3 +42,15 @@ def task_delete_view(request, pk):
 
     context = {'item': task}
     return render(request, 'tasks/task_delete.html', context)
+
+def cross_out_item_view(request, pk):
+    task = Task.objects.get(id=pk)
+    task.completed = True
+    task.save()
+    return redirect('home')
+
+def uncross_item_view(request, pk):
+    task = Task.objects.get(id=pk)
+    task.completed = False
+    task.save()
+    return redirect('home')
